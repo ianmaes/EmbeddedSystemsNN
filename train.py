@@ -43,5 +43,5 @@ for i in range(epochs):
 print(y_pred*100)
 print(y_train*100)
 
-# torch.save(NN.state_dict(), 'model.pth')
+torch.save(model.state_dict(), 'model.pth')
 
