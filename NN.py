@@ -7,7 +7,7 @@ class NN(nn.Module):
         super(NN, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)
         self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(hidden_size, output_size)
+        self.fc2 = nn.Linear(hidden_size, hidden_size)
         self.sigmoid = nn.Sigmoid()
         self.fc3 = nn.Linear(hidden_size, output_size)
         
@@ -17,6 +17,8 @@ class NN(nn.Module):
         out = self.fc2(out)
         out = self.sigmoid(out)
         out = self.fc3(out)
+        out = self.sigmoid(out)
+
         return out
 
 
