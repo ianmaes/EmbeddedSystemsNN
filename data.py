@@ -15,8 +15,8 @@ while x.isOpen() == True:
         data = [dummy.strip() for dummy in data.split(',')]
         shunt = data[0]
         bus = data[1]
-        curr = data[2]
-        load = data[3]
+        load = data[2]
+        curr = data[3]
         power = data[4]
         temp_bat = data[5]
         temp_amb = data[6]
@@ -26,4 +26,4 @@ while x.isOpen() == True:
         
         with open('SensorData.csv', mode='a', newline='') as sensor_file:
             sensor_writer = csv.writer(sensor_file)
-            sensor_writer.writerow([shunt, bus, curr, load, power, temp_bat, temp_amb, time_delta])
+            sensor_writer.writerow([shunt, bus, load, curr, power, temp_bat, temp_amb, time_delta])
