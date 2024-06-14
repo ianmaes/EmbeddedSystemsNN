@@ -15,9 +15,8 @@ class NN(nn.Module):
         out = self.fc1(x)
         out = self.relu(out)
         out = self.fc2(out)
-        out = self.sigmoid(out)
+        out = self.relu(out)
         out = self.fc3(out)
-        out = self.sigmoid(out)
 
         return out
 

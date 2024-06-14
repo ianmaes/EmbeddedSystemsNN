@@ -27,9 +27,9 @@ X_test -= m
 X_test /= s
 
 criterion = nn.MSELoss()
-model = NN(7, 128, 1)
-epochs = 5001
-lr = 0.00001
+model = NN(7, 64, 1)
+epochs = 15001
+lr = 0.001
 optimizer = optim.Adam(model.parameters(), lr=lr)
 
 for i in range(epochs):
