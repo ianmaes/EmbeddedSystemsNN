@@ -2,6 +2,7 @@ import torch.nn as nn
 import numpy as np
 import torch
 
+
 class NN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(NN, self).__init__()

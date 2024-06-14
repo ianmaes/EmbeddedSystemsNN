@@ -26,22 +26,25 @@ X_test -= m
 
 X_test /= s
 
-criterion = nn.MSELoss()
-model = NN(7, 64, 1)
-epochs = 15001
-lr = 0.001
-optimizer = optim.Adam(model.parameters(), lr=lr)
 
-for i in range(epochs):
-    optimizer.zero_grad()
-    y_pred = model(X_train)
-    loss = criterion(y_pred, y_train)
-    loss.backward()
-    optimizer.step()
-    if i % 100 == 0:
-        print('Epoch: {}, Loss: {}'.format(i, loss.item()))
-print(y_pred*100)
-print(y_train*100)
 
-torch.save(model.state_dict(), 'model.pth')
+# torch.save(model.state_dict(), 'model.pth')
 
+if __name__ == '__main__':
+    
+    criterion = nn.MSELoss()
+    model = NN(7, 64, 1)
+    epochs = 15001
+    lr = 0.001
+    optimizer = optim.Adam(model.parameters(), lr=lr)
+
+    for i in range(epochs):
+        optimizer.zero_grad()
+        y_pred = model(X_train)
+        loss = criterion(y_pred, y_train)
+        loss.backward()
+        optimizer.step()
+        if i % 100 == 0:
+            print('Epoch: {}, Loss: {}'.format(i, loss.item()))
+    print(y_pred*100)
+    print(y_train*100)
